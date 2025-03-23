@@ -1,0 +1,78 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 40px;
+}
+
+.title {
+  font-weight: normal;
+}
+
+.subtitle {
+  font-weight: normal;
+  font-size: 18px;
+  color: #424242;
+  padding: 0 40px;
+}
+
+.input-container {
+  display: flex;
+  gap: 20px;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+}
+
+
+.input-label {
+  display: block;           /* Ensures full width */
+  width: 100%;              /* Stretches over input */
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.unit-selector {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 40px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+
+.history-button {
+  padding: 0.5rem 1rem;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.footer {
+  padding: 0 40px;
+}
+
+.calculate-button {
+  padding: 0.5rem 1rem;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.history {
+  padding: 0 40px;
+}
