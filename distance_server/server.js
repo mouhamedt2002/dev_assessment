@@ -83,11 +83,10 @@ app.post("/distance", async (req, res) => {
             parseFloat(destinationData.lat),
             parseFloat(destinationData.lon)
         );
-        console.log("distance_km: ", distance_km, "distance_mi: ", distance_mi);
 
         // Save query to database
         await pool.query(
-            "INSERT INTO distance_queries (source, destination, distance_km, distance_mi) VALUES ($1, $2, $3, $4)",
+            "INSERT INTO distance_history (source, destination, distance_km, distance_mi) VALUES ($1, $2, $3, $4)",
             [source, destination, distance_km, distance_mi]
         );
 
@@ -103,7 +102,7 @@ app.post("/distance", async (req, res) => {
 // Endpoint to get history
 app.get("/history", async (req, res) => {
     try {
-        const result = await pool.query("SELECT * FROM distance_queries ORDER BY id DESC");
+        const result = await pool.query("SELECT * FROM distance_history ORDER BY id DESC");
         res.json(result.rows);
     } catch (error) {
         console.error(error);

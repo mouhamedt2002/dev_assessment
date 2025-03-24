@@ -38,7 +38,9 @@ function App() {
     }
   };
 
+  // Get history from the server
   const getHistory = async () => {
+    console.log("testing get history")
     try {
       const response = await axios.get("http://localhost:5000/history");
       setHistory(response.data);
@@ -50,7 +52,7 @@ function App() {
   };
 
   const getDistance = () => {
-    if (!distance_km || !distance_mi) return null;
+    if (distance_km == null || distance_mi == null) return null;
     switch (unit) {
       case 'km':
         return <p>Distance: {distance_km} km</p>;
@@ -63,21 +65,24 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    getHistory();
-  }, []);
+  // useEffect(() => {
+  //   getHistory();
+  // }, []);
 
   return (
     <div className="App">
+      {/* Title and history button */}
       <div className="header">
         <h1 className="title">Distance Calculator</h1>
         <button className="history-button" onClick={getHistory}>{!showHistory ? 'View Historical Queries' : 'Back to Calculator'}</button>
       </div>
       
+      {/* Subtitle */}
       <h2 className="subtitle">Prototype web application for calculating the distance between two addresses.</h2>
   
       {!showHistory ? (
       <div>
+        {/* Form for inputing source and destination */}
         <form onSubmit={handleSubmit}>
           <div className="input-container">
             <div className="input-group">
@@ -90,6 +95,7 @@ function App() {
               <input type="text" id="destination" className="text-input" placeholder="Enter destination"  value={destination} onChange={(e)=> setDestination(e.target.value)} />
             </div>
 
+            {/* Unit Selector Radio Button */}
             <div className="unit-selector">
               <p className="input-label">Distance Unit:</p>
               <label className="radio-option">
@@ -124,6 +130,8 @@ function App() {
               </label>
             </div>
           </div>
+          
+          {/* Calculate button */}
           <div className="footer">
             <button className="calculate-button" type="submit">Calculate Distance</button>
           </div>
@@ -137,6 +145,7 @@ function App() {
       
       ) : (
       <div className="history">
+        {/* History of all queries */}
         <h3>History</h3>
         <ul>
           {history.map((query, index) => (

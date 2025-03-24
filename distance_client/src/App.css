@@ -29,10 +29,9 @@
   padding: 0 40px;
 }
 
-
 .input-label {
-  display: block;           /* Ensures full width */
-  width: 100%;              /* Stretches over input */
+  display: block;    
+  width: 100%;            
   margin-bottom: 6px;
   font-weight: bold;
   font-size: 16px;
@@ -51,7 +50,6 @@
   gap: 6px;
   font-size: 14px;
 }
-
 
 .history-button {
   padding: 0.5rem 1rem;
