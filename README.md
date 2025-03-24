@@ -17,7 +17,7 @@ Built with:
 
 ### 1. Clone the repository
 
-- git clone git@github.com:mouhamedt2002/dev_assessment.git
+- git clone https://github.com/mouhamedt2002/dev_assessment.git
 - cd dev_assessment
 
 ### 2. Start the app with Docker Compose
